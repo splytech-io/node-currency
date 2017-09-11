@@ -34,4 +34,9 @@ describe('currency', function () {
 
     currency.format(-123).should.equals('-1.23£');
   });
+  it('should format negative amount 2', function () {
+    const currency = Currency.EUR;
+
+    currency.format(-123).should.equals('-€1.23');
+  });
 });
