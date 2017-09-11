@@ -1,0 +1,31 @@
+{
+  "name": "@plytech-io/currency",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Andrius Skerla",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/splytech-io/node-currency.git"
+  },
+  "bugs": {
+    "url": "https://github.com/splytech-io/node-currency/issues"
+  },
+  "homepage": "https://github.com/splytech-io/node-currency#readme",
+  "description": "currency",
+  "keywords": [
+    "currency"
+  ]
+}
