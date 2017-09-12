@@ -63,7 +63,7 @@ module.exports = Object.assign(Currency, {
   ARS: new Currency('ARS', '$', true, 2),
   BRL: new Currency('BRL', 'R$', true, 2),
   CLP: new Currency('CLP', '$', true, 2),
-  COP: new Currency('COP', '$', true, 2),
+  COP: new Currency('COP', '$', true, 0),
   DOP: new Currency('DOP', 'RD$', true, 2),
   MXN: new Currency('MXN', '$', true, 2),
   PAB: new Currency('PAB', '$', true, 2),
