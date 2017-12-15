@@ -1,7 +1,9 @@
 'use strict';
 
-require('chai').should();
-const Currency = require('./..');
+import { should } from 'chai';
+import Currency from '../.';
+
+should();
 
 describe('currency', function () {
   it('should prepend currency symbol', function () {
