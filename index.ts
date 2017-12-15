@@ -2,7 +2,7 @@
 
 import { format } from './lib/numeral';
 
-type CURRENCY_CODES = 'NGN' | 'EUR' | 'GBP' |
+export type CURRENCY_CODES = 'NGN' | 'EUR' | 'GBP' |
                       'INR' | 'AED' | 'USD' |
                       'ARS' | 'BRL' | 'CLP' |
                       'COP' | 'DOP' | 'MXN' |
