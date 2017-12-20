@@ -1,14 +1,35 @@
 'use strict';
 
-const numeral = require('./lib/numeral');
+import { format } from './lib/numeral';
+
+export type CURRENCY_CODES = 'NGN' | 'EUR' | 'GBP' |
+                      'INR' | 'AED' | 'USD' |
+                      'ARS' | 'BRL' | 'CLP' |
+                      'COP' | 'DOP' | 'MXN' |
+                      'PAB' | 'PEN' | 'UYU' |
+                      'SAR' | 'EGP' | 'PKR' |
+                      'JOD' | 'BHD' | 'QAR' |
+                      'LBP' | 'CNY' | 'MYR';
 
 /**
  *
  * @type {Currency}
  */
-class Currency {
-  constructor(code, symbol, prepend, decimal_point_position) {
-    this.code = code;
+export class Currency {
+  decimal_point_symbol: {
+    position: number;
+  };
+  currency_symbol: {
+    value: string;
+    prepend: boolean;
+  };
+
+  constructor(
+    private code: CURRENCY_CODES,
+    symbol: string,
+    prepend: boolean,
+    decimal_point_position: number
+  ) {
     this.decimal_point_symbol = Object.freeze({
       position: decimal_point_position,
     });
@@ -26,7 +47,7 @@ class Currency {
    * @param value {string}
    * @returns {string}
    */
-  addCurrencySymbol(value) {
+  addCurrencySymbol(value: string) {
     if (this.currency_symbol.prepend) {
       return this.currency_symbol.value + value;
     }
@@ -39,9 +60,9 @@ class Currency {
    * @param amount
    * @returns {string}
    */
-  format(amount) {
+  format(amount: number) {
     const absoluteValue = Math.abs(amount / Math.pow(10, this.decimal_point_symbol.position));
-    let result = numeral.format(absoluteValue, this.decimal_point_symbol.position);
+    let result = format(absoluteValue, this.decimal_point_symbol.position);
 
     result = this.addCurrencySymbol(result);
 
@@ -53,7 +74,7 @@ class Currency {
   }
 }
 
-module.exports = Object.assign(Currency, {
+export default Object.assign(Currency, {
   NGN: new Currency('NGN', '₦', true, 2),
   EUR: new Currency('EUR', '€', true, 2),
   GBP: new Currency('GBP', '£', true, 2),
