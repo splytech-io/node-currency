@@ -7,7 +7,7 @@
  */
 export function format(number: number, decimal_places = 2) {
   const [integer, decimal] = number.toFixed(decimal_places).split('.');
-  const remainder = integer.length % 3
+  const remainder = integer.length % 3;
   const integerParts = [];
 
   for (let i = integer.length - 3; i >= 0; i -= 3) {

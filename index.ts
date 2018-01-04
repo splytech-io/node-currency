@@ -25,7 +25,7 @@ export class Currency {
   };
 
   constructor(
-    private code: CURRENCY_CODES,
+    public code: CURRENCY_CODES,
     symbol: string,
     prepend: boolean,
     decimal_point_position: number
