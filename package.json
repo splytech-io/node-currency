@@ -1,6 +1,6 @@
 {
   "name": "@splytech-io/currency",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "lib/currency.js",
   "scripts": {
     "build": "tsc -d",
