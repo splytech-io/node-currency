@@ -26,7 +26,7 @@ export default class Currency {
   static EGP = new Currency('EGP', 'EG£', true, 2);
   static PKR = new Currency('PKR', '₨', true, 2);
   static JOD = new Currency('JOD', 'JOD', true, 2);
-  static BHD = new Currency('BHD', 'BD', true, 0);
+  static BHD = new Currency('BHD', 'BD', true, 2);
   static QAR = new Currency('QAR', '﷼', true, 2);
   static LBP = new Currency('LBP', 'ل.ل', true, 2);
   static CNY = new Currency('CNY', '¥', true, 2);
