@@ -1,11 +1,11 @@
-'use strict';
 
 /**
  *
- * @param number
+ * @param {number} number
+ * @param {number} decimal_places
  * @returns {string}
  */
-export function format(number: number, decimal_places = 2) {
+export function format(number: number, decimal_places = 2): string {
   const [integer, decimal] = number.toFixed(decimal_places).split('.');
   const remainder = integer.length % 3;
   const integerParts = [];
@@ -19,8 +19,8 @@ export function format(number: number, decimal_places = 2) {
   }
 
   if (decimal) {
-    return `${integerParts}.${decimal}`;
+    return `${integerParts.join(',')}.${decimal}`;
   }
 
-  return `${integerParts}`;
+  return integerParts.join(',');
 }

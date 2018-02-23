@@ -1,44 +1,42 @@
 'use strict';
 
-import { should } from 'chai';
-import Currency from '../.';
-
-should();
+import { expect } from 'chai';
+import Currency from './currency';
 
 describe('currency', function () {
   it('should prepend currency symbol', function () {
     const currency = new Currency('GBP', '£', true, 2);
 
-    currency.format(1).should.equals('£0.01');
+    expect(currency.format(1)).to.equals('£0.01');
   });
   it('should append currency symbol', function () {
     const currency = new Currency('GBP', '£', false, 2);
 
-    currency.format(1).should.equals('0.01£');
+    expect(currency.format(1)).to.equals('0.01£');
   });
   it('should use 1 decimal point position', function () {
     const currency = new Currency('GBP', '£', false, 1);
 
-    currency.format(1).should.equals('0.1£');
+    expect(currency.format(1)).to.equals('0.1£');
   });
   it('should use 1 decimal point position', function () {
     const currency = new Currency('GBP', '£', false, 0);
 
-    currency.format(1).should.equals('1£');
+    expect(currency.format(1)).to.equals('1£');
   });
   it('should format negative amount', function () {
     const currency = new Currency('GBP', '£', true, 2);
 
-    currency.format(-123).should.equals('-£1.23');
+    expect(currency.format(-123)).to.equals('-£1.23');
   });
   it('should format negative amount 2', function () {
     const currency = new Currency('GBP', '£', false, 2);
 
-    currency.format(-123).should.equals('-1.23£');
+    expect(currency.format(-123)).to.equals('-1.23£');
   });
   it('should format negative amount 2', function () {
     const currency = Currency.EUR;
 
-    currency.format(-123).should.equals('-€1.23');
+    expect(currency.format(-123)).to.equals('-€1.23');
   });
 });

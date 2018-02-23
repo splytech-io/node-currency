@@ -1,21 +1,23 @@
 {
   "name": "@splytech-io/currency",
   "version": "0.1.2",
-  "main": "index.js",
+  "main": "lib/currency.js",
   "scripts": {
     "build": "tsc -d",
+    "pretest": "rm -f lib/*.d.ts lib/*.js",
     "prepublish": "npm run build",
-    "pretest": "npm run build",
-    "test": "mocha"
+    "test": "nyc mocha --require ts-node/register 'lib/*.spec.ts'"
   },
   "author": "Andrius Skerla",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.0.10",
-    "@types/mocha": "^2.2.44",
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
     "chai": "^4.1.2",
     "mocha": "^3.5.3",
+    "nyc": "^11.4.1",
     "ts-mocha": "^1.0.3",
+    "ts-node": "^5.0.0",
     "typescript": "^2.6.2"
   },
   "directories": {
@@ -34,5 +36,21 @@
   "description": "currency",
   "keywords": [
     "currency"
-  ]
+  ],
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "include": [
+      "lib"
+    ],
+    "exclude": [
+      "lib/*.spec.ts",
+      "lib/*.d.ts"
+    ]
+  }
 }
