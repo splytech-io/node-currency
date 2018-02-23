@@ -60,7 +60,22 @@ export default class Currency {
 
   /**
    *
-   * @param value {string}
+   * @param {string} code
+   * @returns {Currency}
+   */
+  static getCurrency(code: string): Currency {
+    const currency = (<any>Currency)[code];
+
+    if (!currency) {
+      throw new Error(`currency code is not supported: ${code}`);
+    }
+
+    return currency;
+  }
+
+  /**
+   *
+   * @param {string} value
    * @returns {string}
    */
   addCurrencySymbol(value: string) {
@@ -73,7 +88,7 @@ export default class Currency {
 
   /**
    *
-   * @param amount
+   * @param {number} amount
    * @returns {string}
    */
   format(amount: number) {

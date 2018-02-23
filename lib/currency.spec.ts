@@ -39,4 +39,12 @@ describe('currency', function () {
 
     expect(currency.format(-123)).to.equals('-€1.23');
   });
+  it('should find currency by its code', () => {
+    expect(Currency.getCurrency('GBP')).to.equals(Currency.GBP);
+  });
+  it('should fail to find currency by its code', () => {
+    expect(() => {
+      Currency.getCurrency('INVALID');
+    }).to.throw();
+  });
 });
