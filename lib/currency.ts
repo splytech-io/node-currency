@@ -31,7 +31,8 @@ export default class Currency {
   static LBP = new Currency('LBP', 'ل.ل', true, 2);
   static CNY = new Currency('CNY', '¥', true, 2);
   static MYR = new Currency('MYR', 'RM', true, 2);
-  static TRY = new Currency('TRY', '₺', true, 2);  
+  static TRY = new Currency('TRY', '₺', true, 2);
+  static KWD = new Currency('KWD', 'د.ك', true, 2);
 
   code: string;
   decimal_point_symbol: {
