@@ -33,6 +33,7 @@ export default class Currency {
   static MYR = new Currency('MYR', 'RM', true, 2);
   static TRY = new Currency('TRY', '₺', true, 2);
   static KWD = new Currency('KWD', 'د.ك', true, 2);
+  static MAD = new Currency('MAD', 'MAD', true, 2);
 
   code: string;
   decimal_point_symbol: {
