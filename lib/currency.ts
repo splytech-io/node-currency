@@ -34,7 +34,14 @@ export default class Currency {
   static TRY = new Currency('TRY', '₺', true, 2);
   static KWD = new Currency('KWD', 'د.ك', true, 2);
   static MAD = new Currency('MAD', 'MAD', true, 2);
-
+  static SGD = new Currency('SGD', 'S$', true, 2);
+  static IDR = new Currency('IRD', 'Rp', true, 2);
+  static THB = new Currency('THB', '฿', true, 2);
+  static VND = new Currency('VND', '₫', true, 1);
+  static PHP = new Currency('PHP', '₱', true, 2);
+  static MMK = new Currency('MMK', 'K', true, 2);  
+  static KHR = new Currency('KHR', '៛', true, 1);  
+  
   code: string;
   decimal_point_symbol: {
     position: number;
