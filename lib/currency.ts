@@ -86,6 +86,14 @@ export default class Currency {
 
   /**
    *
+   * @returns {string[]} Array of valid currency codes
+   */
+  static getCurrencyCodes(): string[] {
+    return Object.keys(this);
+  }
+
+  /**
+   *
    * @param {string} value
    * @returns {string}
    */
@@ -108,5 +116,14 @@ export default class Currency {
     const resultWithCurrency = this.addCurrencySymbol(formattedResult);
 
     return `${amount < 0 ? '-' : ''}${resultWithCurrency}`;
+  }
+
+  /**
+   *
+   * @param {double} double (double - with decimal point)
+   * @returns {number} (integer - without decimal point)
+   */
+  toCents(double: number) {
+    return double * Math.pow(10, this.decimal_point_symbol.position);
   }
 }

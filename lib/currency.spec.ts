@@ -47,4 +47,15 @@ describe('currency', function () {
       Currency.getCurrency('INVALID');
     }).to.throw();
   });
+  it('should return an array of currency object keys', () => {
+    expect(Currency.getCurrencyCodes()).to.deep.equal(Object.keys(Currency));
+  });
+  it('should remove decimal point from currency with 2 decimal position', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toCents(100213.59)).to.deep.equal(10021359);
+  });
+  it('should return same amount for currency with 0 decimal position', () => {
+    const currency = new Currency('TEST', '$', false, 0);
+    expect(currency.toCents(100213.59)).to.deep.equal(100213.59);
+  });
 });
