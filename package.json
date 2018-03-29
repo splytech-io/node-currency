@@ -1,6 +1,6 @@
 {
   "name": "@splytech-io/currency",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "typings": "lib/currency.d.ts",
   "main": "lib/currency.js",
   "scripts": {
