@@ -40,7 +40,8 @@ export default class Currency {
   static VND = new Currency('VND', '₫', true, 1);
   static PHP = new Currency('PHP', '₱', true, 2);
   static MMK = new Currency('MMK', 'K', true, 2);  
-  static KHR = new Currency('KHR', '៛', true, 1);  
+  static KHR = new Currency('KHR', '៛', true, 1);
+  static IQD = new Currency('IQD', 'ع.د', true, 3);
   
   code: string;
   decimal_point_symbol: {
