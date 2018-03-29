@@ -47,4 +47,26 @@ describe('currency', function () {
       Currency.getCurrency('INVALID');
     }).to.throw();
   });
+  it('should return an array of currency object keys', () => {
+    const expectedCodes = [
+      'NGN', 'EUR', 'GBP', 'INR', 'AED', 'USD', 'ARS',
+      'BRL', 'CLP', 'COP', 'DOP', 'MXN', 'PAB', 'PEN',
+      'UYU', 'SAR', 'EGP', 'PKR', 'JOD', 'BHD', 'QAR',
+      'LBP', 'CNY', 'MYR', 'TRY', 'KWD', 'MAD', 'SGD',
+      'IDR', 'THB', 'VND', 'PHP', 'MMK', 'KHR', 'IQD'
+    ]
+    expect(Currency.getCurrencyCodes()).to.deep.equal(expectedCodes);
+  });
+  it('should remove decimal point from currency with 2 decimal position', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toCents(100213.59)).to.equal(10021359);
+  });
+  it('should add 2 zeroes to amount with no decimal for currency with 2 decimal position', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toCents(1234)).to.equal(123400);
+  });
+  it('should return same amount for currency with 0 decimal position', () => {
+    const currency = new Currency('TEST', '$', false, 0);
+    expect(currency.toCents(100213.59)).to.equal(100213.59);
+  });
 });
