@@ -123,7 +123,7 @@ export default class Currency {
    * @param {double} double (double - with decimal point)
    * @returns {number} (integer - without decimal point)
    */
-  toCents(double: number) {
+  toMinorUnit(double: number) {
     return double * Math.pow(10, this.decimal_point_symbol.position);
   }
 }
