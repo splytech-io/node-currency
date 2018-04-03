@@ -1,5 +1,5 @@
 *.tgz
-#*.ts
+*.ts
 *.spec.ts
 coverage
 .nyc_output
