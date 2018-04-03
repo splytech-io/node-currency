@@ -57,6 +57,18 @@ describe('currency', function () {
     ]
     expect(Currency.getCurrencyCodes()).to.deep.equal(expectedCodes);
   });
+  it('should convert amount to major unit', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toMajorUnit(10021359)).to.equal(100213.59);
+  });
+  it('should return same amount if 0', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toMajorUnit(0)).to.equal(0);
+  });
+  it('should convert amount to major unit if amount is negative', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toMajorUnit(-1523)).to.equal(-15.23);
+  });
   it('should remove decimal point from currency with 2 decimal position', () => {
     const currency = new Currency('TEST', '$', false, 2);
     expect(currency.toMinorUnit(100213.59)).to.equal(10021359);

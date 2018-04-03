@@ -39,10 +39,10 @@ export default class Currency {
   static THB = new Currency('THB', '฿', true, 2);
   static VND = new Currency('VND', '₫', true, 1);
   static PHP = new Currency('PHP', '₱', true, 2);
-  static MMK = new Currency('MMK', 'K', true, 2);  
+  static MMK = new Currency('MMK', 'K', true, 2);
   static KHR = new Currency('KHR', '៛', true, 1);
   static IQD = new Currency('IQD', 'ع.د', true, 3);
-  
+
   code: string;
   decimal_point_symbol: {
     position: number;
@@ -111,11 +111,15 @@ export default class Currency {
    * @returns {string}
    */
   format(amount: number) {
-    const absoluteValue = Math.abs(amount / Math.pow(10, this.decimal_point_symbol.position));
+    const absoluteValue = Math.abs(this.toMajorUnit(amount));
     const formattedResult = format(absoluteValue, this.decimal_point_symbol.position);
     const resultWithCurrency = this.addCurrencySymbol(formattedResult);
 
     return `${amount < 0 ? '-' : ''}${resultWithCurrency}`;
+  }
+
+  toMajorUnit(amount: number) {
+    return amount / Math.pow(10, this.decimal_point_symbol.position);
   }
 
   /**
