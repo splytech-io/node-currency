@@ -1,5 +1,3 @@
-'use strict';
-
 import { format } from './numeral';
 
 /**
@@ -26,7 +24,7 @@ export default class Currency {
   static EGP = new Currency('EGP', 'EG£', true, 2);
   static PKR = new Currency('PKR', '₨', true, 2);
   static JOD = new Currency('JOD', 'JOD', true, 2);
-  static BHD = new Currency('BHD', 'BD', true, 2);
+  static BHD = new Currency('BHD', 'BD', true, 2); // TODO: should be 3
   static QAR = new Currency('QAR', '﷼', true, 2);
   static LBP = new Currency('LBP', 'ل.ل', true, 2);
   static CNY = new Currency('CNY', '¥', true, 2);
@@ -118,6 +116,11 @@ export default class Currency {
     return `${amount < 0 ? '-' : ''}${resultWithCurrency}`;
   }
 
+  /**
+   *
+   * @param {number} amount
+   * @returns {number}
+   */
   toMajorUnit(amount: number) {
     return amount / Math.pow(10, this.decimal_point_symbol.position);
   }
