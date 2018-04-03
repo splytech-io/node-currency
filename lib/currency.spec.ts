@@ -59,14 +59,22 @@ describe('currency', function () {
   });
   it('should remove decimal point from currency with 2 decimal position', () => {
     const currency = new Currency('TEST', '$', false, 2);
-    expect(currency.toCents(100213.59)).to.equal(10021359);
+    expect(currency.toMinorUnit(100213.59)).to.equal(10021359);
   });
   it('should add 2 zeroes to amount with no decimal for currency with 2 decimal position', () => {
     const currency = new Currency('TEST', '$', false, 2);
-    expect(currency.toCents(1234)).to.equal(123400);
+    expect(currency.toMinorUnit(1234)).to.equal(123400);
   });
   it('should return same amount for currency with 0 decimal position', () => {
     const currency = new Currency('TEST', '$', false, 0);
-    expect(currency.toCents(100213.59)).to.equal(100213.59);
+    expect(currency.toMinorUnit(100213.59)).to.equal(100213.59);
+  });
+  it('should return 0 if amount is 0', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toMinorUnit(0)).to.equal(0);
+  });
+  it('should convert amount if negative', () => {
+    const currency = new Currency('TEST', '$', false, 2);
+    expect(currency.toMinorUnit(-123.54)).to.equal(-12354);
   });
 });
