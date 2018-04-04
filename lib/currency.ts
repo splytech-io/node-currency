@@ -13,8 +13,8 @@ export default class Currency {
   static USD = new Currency('USD', '$', true, 2);
   static ARS = new Currency('ARS', '$', true, 2);
   static BRL = new Currency('BRL', 'R$', true, 2);
-  static CLP = new Currency('CLP', '$', true, 2);
-  static COP = new Currency('COP', '$', true, 0);
+  static CLP = new Currency('CLP', '$', true, 0);
+  static COP = new Currency('COP', '$', true, 2);
   static DOP = new Currency('DOP', 'RD$', true, 2);
   static MXN = new Currency('MXN', '$', true, 2);
   static PAB = new Currency('PAB', '$', true, 2);
@@ -23,8 +23,8 @@ export default class Currency {
   static SAR = new Currency('SAR', 'SAR', true, 2);
   static EGP = new Currency('EGP', 'EG£', true, 2);
   static PKR = new Currency('PKR', '₨', true, 2);
-  static JOD = new Currency('JOD', 'JOD', true, 2);
-  static BHD = new Currency('BHD', 'BD', true, 2); // TODO: should be 3
+  static JOD = new Currency('JOD', 'JOD', true, 3);
+  static BHD = new Currency('BHD', 'BD', true, 3);
   static QAR = new Currency('QAR', '﷼', true, 2);
   static LBP = new Currency('LBP', 'ل.ل', true, 2);
   static CNY = new Currency('CNY', '¥', true, 2);
