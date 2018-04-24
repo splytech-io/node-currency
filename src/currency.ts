@@ -42,6 +42,7 @@ export default class Currency {
   static IQD = new Currency('IQD', 'ع.د', true, 3);
 
   code: string;
+  /* tslint:disable:variable-name */
   decimal_point_symbol: {
     position: number;
   };
@@ -50,13 +51,15 @@ export default class Currency {
     prepend: boolean;
   };
 
-  constructor(code: string,
-              symbol: string,
-              prepend: boolean,
-              decimal_point_position: number) {
+  constructor(
+    code: string,
+    symbol: string,
+    prepend: boolean,
+    decimalPointPosition: number,
+  ) {
     this.code = code;
     this.decimal_point_symbol = Object.freeze({
-      position: decimal_point_position,
+      position: decimalPointPosition,
     });
 
     this.currency_symbol = Object.freeze({
@@ -88,6 +91,20 @@ export default class Currency {
    */
   static getCurrencyCodes(): string[] {
     return Object.keys(this);
+  }
+
+  /**
+   *
+   * @param {number} amount
+   * @param {Currency} from
+   * @param {Currency} to
+   * @param {number} rate
+   * @returns {number}
+   */
+  static convert(amount: number, from: Currency, to: Currency, rate: number = 1): number {
+    const normalized = to.toMinorUnit(from.toMajorUnit(amount));
+
+    return Math.round(normalized * rate);
   }
 
   /**

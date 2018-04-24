@@ -3,38 +3,38 @@
 import { expect } from 'chai';
 import Currency from './currency';
 
-describe('currency', function () {
-  it('should prepend currency symbol', function () {
+describe('currency', () => {
+  it('should prepend currency symbol', () => {
     const currency = new Currency('GBP', '£', true, 2);
 
     expect(currency.format(1)).to.equals('£0.01');
   });
-  it('should append currency symbol', function () {
+  it('should append currency symbol', () => {
     const currency = new Currency('GBP', '£', false, 2);
 
     expect(currency.format(1)).to.equals('0.01£');
   });
-  it('should use 1 decimal point position', function () {
+  it('should use 1 decimal point position', () => {
     const currency = new Currency('GBP', '£', false, 1);
 
     expect(currency.format(1)).to.equals('0.1£');
   });
-  it('should use 1 decimal point position', function () {
+  it('should use 1 decimal point position', () => {
     const currency = new Currency('GBP', '£', false, 0);
 
     expect(currency.format(1)).to.equals('1£');
   });
-  it('should format negative amount', function () {
+  it('should format negative amount', () => {
     const currency = new Currency('GBP', '£', true, 2);
 
     expect(currency.format(-123)).to.equals('-£1.23');
   });
-  it('should format negative amount 2', function () {
+  it('should format negative amount 2', () => {
     const currency = new Currency('GBP', '£', false, 2);
 
     expect(currency.format(-123)).to.equals('-1.23£');
   });
-  it('should format negative amount 2', function () {
+  it('should format negative amount 2', () => {
     const currency = Currency.EUR;
 
     expect(currency.format(-123)).to.equals('-€1.23');
@@ -53,8 +53,8 @@ describe('currency', function () {
       'BRL', 'CLP', 'COP', 'DOP', 'MXN', 'PAB', 'PEN',
       'UYU', 'SAR', 'EGP', 'PKR', 'JOD', 'BHD', 'QAR',
       'LBP', 'CNY', 'MYR', 'TRY', 'KWD', 'MAD', 'SGD',
-      'IDR', 'THB', 'VND', 'PHP', 'MMK', 'KHR', 'IQD'
-    ]
+      'IDR', 'THB', 'VND', 'PHP', 'MMK', 'KHR', 'IQD',
+    ];
     expect(Currency.getCurrencyCodes()).to.deep.equal(expectedCodes);
   });
   it('should convert amount to major unit', () => {
@@ -88,5 +88,12 @@ describe('currency', function () {
   it('should convert amount if negative', () => {
     const currency = new Currency('TEST', '$', false, 2);
     expect(currency.toMinorUnit(-123.54)).to.equal(-12354);
+  });
+  it('should convert currencies', () => {
+    expect(Currency.convert(100, Currency.EUR, Currency.GBP)).to.equals(100);
+    expect(Currency.convert(100, Currency.EUR, Currency.CLP, 1)).to.equals(1);
+    expect(Currency.convert(100, Currency.CLP, Currency.EUR, 1)).to.equals(100 * 100);
+
+    expect(Currency.convert(20909, Currency.CLP, Currency.BRL, 0.00570675959826459)).to.equals(11932);
   });
 });

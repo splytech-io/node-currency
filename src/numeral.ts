@@ -1,12 +1,12 @@
 
 /**
  *
- * @param {number} number
- * @param {number} decimal_places
+ * @param {number} value
+ * @param {number} decimalPlaces
  * @returns {string}
  */
-export function format(number: number, decimal_places = 2): string {
-  const [integer, decimal] = number.toFixed(decimal_places).split('.');
+export function format(value: number, decimalPlaces = 2): string {
+  const [integer, decimal] = value.toFixed(decimalPlaces).split('.');
   const remainder = integer.length % 3;
   const integerParts = [];
 
