@@ -33,7 +33,7 @@ export default class Currency {
   static KWD = new Currency('KWD', 'د.ك', true, 2);
   static MAD = new Currency('MAD', 'MAD', true, 2);
   static SGD = new Currency('SGD', 'S$', true, 2);
-  static IDR = new Currency('IRD', 'Rp', true, 2);
+  static IDR = new Currency('IDR', 'Rp', true, 2);
   static THB = new Currency('THB', '฿', true, 2);
   static VND = new Currency('VND', '₫', true, 1);
   static PHP = new Currency('PHP', '₱', true, 2);
