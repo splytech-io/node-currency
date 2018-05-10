@@ -79,7 +79,7 @@ describe('currency', () => {
   });
   it('should return same amount for currency with 0 decimal position', () => {
     const currency = new Currency('TEST', '$', false, 0);
-    expect(currency.toMinorUnit(100213.59)).to.equal(100213.59);
+    expect(currency.toMinorUnit(100213.59)).to.equal(100214);
   });
   it('should return 0 if amount is 0', () => {
     const currency = new Currency('TEST', '$', false, 2);
@@ -88,6 +88,10 @@ describe('currency', () => {
   it('should convert amount if negative', () => {
     const currency = new Currency('TEST', '$', false, 2);
     expect(currency.toMinorUnit(-123.54)).to.equal(-12354);
+  });
+  it('should convert amount it decimal point is not correct', () => {
+    const currency = new Currency('TEST', 'USD', false, 2);
+    expect(currency.toMinorUnit(12.1111123123123123123123)).to.equal(1211);
   });
   it('should convert currencies', () => {
     expect(Currency.convert(100, Currency.EUR, Currency.GBP)).to.equals(100);
