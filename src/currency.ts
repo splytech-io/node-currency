@@ -148,6 +148,6 @@ export default class Currency {
    * @returns {number} (integer - without decimal point)
    */
   toMinorUnit(double: number) {
-    return double * Math.pow(10, this.decimal_point_symbol.position);
+    return Math.round(double * Math.pow(10, this.decimal_point_symbol.position));
   }
 }
