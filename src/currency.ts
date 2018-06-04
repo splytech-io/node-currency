@@ -40,6 +40,7 @@ export default class Currency {
   static MMK = new Currency('MMK', 'K', true, 2);
   static KHR = new Currency('KHR', '៛', true, 1);
   static IQD = new Currency('IQD', 'ع.د', true, 3);
+  static ILS = new Currency('ILS', '₪', true, 2);
 
   code: string;
   /* tslint:disable:variable-name */
