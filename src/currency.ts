@@ -41,6 +41,9 @@ export default class Currency {
   static KHR = new Currency('KHR', '៛', true, 1);
   static IQD = new Currency('IQD', 'ع.د', true, 3);
   static ILS = new Currency('ILS', '₪', true, 2);
+  static JPY = new Currency('JPY', '¥', true, 0);
+  static RUB = new Currency('RUB', '₽', true, 2);
+  static HKD = new Currency('HKD', 'HK$', true, 2);
 
   code: string;
   /* tslint:disable:variable-name */

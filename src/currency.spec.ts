@@ -54,7 +54,7 @@ describe('currency', () => {
       'UYU', 'SAR', 'EGP', 'PKR', 'JOD', 'BHD', 'QAR',
       'LBP', 'CNY', 'MYR', 'TRY', 'KWD', 'MAD', 'SGD',
       'IDR', 'THB', 'VND', 'PHP', 'MMK', 'KHR', 'IQD',
-      'ILS',
+      'ILS', 'JPY', 'RUB', 'HKD',
     ];
     expect(Currency.getCurrencyCodes()).to.deep.equal(expectedCodes);
   });
