@@ -35,7 +35,7 @@ export default class Currency {
   static SGD = new Currency('SGD', 'S$', true, 2);
   static IDR = new Currency('IDR', 'Rp', true, 2);
   static THB = new Currency('THB', '฿', true, 2);
-  static VND = new Currency('VND', '₫', true, 1);
+  static VND = new Currency('VND', '₫', true, 0);
   static PHP = new Currency('PHP', '₱', true, 2);
   static MMK = new Currency('MMK', 'K', true, 2);
   static KHR = new Currency('KHR', '៛', true, 1);
