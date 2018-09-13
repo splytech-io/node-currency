@@ -44,6 +44,17 @@ export default class Currency {
   static JPY = new Currency('JPY', '¥', true, 0);
   static RUB = new Currency('RUB', '₽', true, 2);
   static HKD = new Currency('HKD', 'HK$', true, 2);
+  static AUD = new Currency('AUD', 'A$', true, 2);
+  static CZK = new Currency('CZK', 'Kč', true, 2);
+  static PLN = new Currency('PLN', 'zł', true, 2);
+  static GHS = new Currency('GHS', 'GH₵', true, 2);
+  static HUF = new Currency('HUF', 'Ft', true, 2);
+  static RON = new Currency('RON', 'RON', true, 2);
+  static RSD = new Currency('RSD', 'дин', true, 2);
+  static ZAR = new Currency('ZAR', 'R', true, 2);
+  static TZS = new Currency('TZS', 'TSh', true, 2);
+  static UGX = new Currency('UGX', 'USh', true, 0);
+  static UAH = new Currency('UAH', '₴', true, 2);
 
   code: string;
   /* tslint:disable:variable-name */
