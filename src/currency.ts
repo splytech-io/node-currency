@@ -55,6 +55,7 @@ export default class Currency {
   static TZS = new Currency('TZS', 'TSh', true, 2);
   static UGX = new Currency('UGX', 'USh', true, 0);
   static UAH = new Currency('UAH', '₴', true, 2);
+  static KES = new Currency('KES', 'KSh', true, 2);
 
   code: string;
   /* tslint:disable:variable-name */
