@@ -44,6 +44,7 @@ export default class Currency {
   static JPY = new Currency('JPY', '¥', true, 0);
   static RUB = new Currency('RUB', '₽', true, 2);
   static HKD = new Currency('HKD', 'HK$', true, 2);
+  static KES = new Currency('KES', 'KSh', true, 2);
 
   code: string;
   /* tslint:disable:variable-name */
