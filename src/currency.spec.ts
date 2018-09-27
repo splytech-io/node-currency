@@ -56,7 +56,7 @@ describe('currency', () => {
       'IDR', 'THB', 'VND', 'PHP', 'MMK', 'KHR', 'IQD',
       'ILS', 'JPY', 'RUB', 'HKD', 'AUD', 'CZK', 'PLN',
       'GHS', 'HUF', 'RON', 'RSD', 'ZAR', 'TZS', 'UGX',
-      'UAH', 'KES',
+      'UAH', 'KES', 'CAD',
     ];
     expect(Currency.getCurrencyCodes()).to.deep.equal(expectedCodes);
   });
