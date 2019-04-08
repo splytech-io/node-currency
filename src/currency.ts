@@ -57,6 +57,7 @@ export default class Currency {
   static UAH = new Currency('UAH', '₴', true, 2);
   static KES = new Currency('KES', 'KSh', true, 2);
   static CAD = new Currency('CAD', '$', true, 2);
+  static SEK = new Currency('SEK', 'kr', true, 2);
 
   code: string;
   /* tslint:disable:variable-name */
